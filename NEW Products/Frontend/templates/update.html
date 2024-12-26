@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <style>
+      body{
+        background-color: lightblue;
+      }
+        form{
+          
+          margin-top: 50px;
+          text-align: center;
+        }
+    
+      </style>
+
+</head>
+<body>
+    <div class="container" >
+     
+        <form action="" method="POST">
+     {% csrf_token %}
+     <div class="form-group row justify-content-center-center" >
+           
+       <h1 class="mb-5" style="color: darkkhaki;">Products Update Page</h1>
+       <div class="form-group row justify-content-center" >
+         <br>
+         <br>
+       <label for="product_name" class="col-sm-2 col-form-label" >Product Name</label>
+       <div class="col-sm-3">
+         <input type="product_name1" class="form-control" name="product_name" value="{{up.product_name.value}}" id="inputproduct_name3">
+       </div>
+     </div> <br> <br> <br>
+     <div class="form-group row justify-content-center">
+       <label for="product_code1" class="col-sm-2 col-form-label" >Product Code</label>
+       <div class="col-sm-3">
+         <input type="product_code" class="form-control" name="product_code" value="{{up.product_code.value}}" id="inputproduct_code3">
+       </div>
+     </div> <br> <br><br> 
+     <div class="form-group row justify-content-center">
+        <label for="selling_price1" class="col-sm-2 col-form-label" >Selling Price</label>
+        <div class="col-sm-3">
+          <input type="selling_price" class="form-control" name="selling_price" value="{{up.selling_price.value}}" id="inputselling_price3">
+        </div>
+      </div> <br> <br><br> 
+      <div class="form-group row justify-content-center">
+        <label for="original_price1" class="col-sm-2 col-form-label" >Original Price</label>
+        <div class="col-sm-3">
+          <input type="original_price" class="form-control" name="original_price" value="{{up.original_price.value}}" id="inputoriginal_price3">
+        </div>
+      </div> <br> <br><br> 
+      <div class="form-group row justify-content-center">
+        <label for="product_qty" class="col-sm-2 col-form-label" >Product Qty</label>
+        <div class="col-sm-3">
+          <input type="product_qty" class="form-control" name="product_qty" value="{{up.product_qty.value}}" id="inputproduct_qty3">
+        </div>
+      </div> <br> <br><br> <br>
+     
+     <div class="form-group row justify-content-center">
+       <div class="col-sm-9">
+         <button type="update" class="btn btn-outline-dark" value="update">Update</button>
+         <button type="cancel" class="btn btn-outline-secondary" value="cancel">Cancel</button>
+
+       </div>
+     </div>
+   </div>
+   </form>
+   </div>
+   </body>
+</html>

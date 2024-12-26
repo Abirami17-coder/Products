@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <style>
+        table{
+            margin-top: 30px;
+        }
+        button{
+            background-color: antiquewhite;
+            
+        }
+        h1{
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1 style="text-align: center;">Products View Page</h1>
+
+    
+<div class="d-flex justify-content-center">
+  
+    <div class="col-sm-10">
+        <table class="table table-bordered-dark">
+            <thead style="background-color: rosybrown;">
+            <tr>
+                <th scope="col">Product Name</th>
+                <th scope="col">Product code</th>
+                <th scope="col">Selling Price</th>
+                <th scope="col">Original Price</th>
+               <th scope="col">Product Qty</th>
+               <th scope="col">Product-Delete</th>
+               <th scope="col">Product-Update</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in created_data %}
+            <tr>
+                <td>{{user.product_name}}</td>
+                <td>{{user.product_code}}</td>
+                <td>{{user.selling_price}}</td>
+                <td>{{user.original_price}}</td>
+                <td>{{user.product_qty}}</td>
+                <td>
+                    <a href="{% url 'product_delete' user.id %}">
+                      <button class="btn btn-danger">Delete</button> </a>
+                </td>
+                <td>
+                     <a href="{% url 'product_update' user.id %}">
+                       <button class="btn btn-success">Update</button></td>
+
+
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+</div>
+    
+
+</body>
+</html>
